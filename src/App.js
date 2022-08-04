@@ -17,7 +17,7 @@ async function searchNews(q) {
   return body.value;
 }
 function App() {
-  const [query, setQuery] = React.useState("docker");
+  const [query, setQuery] = React.useState("Input");
   const [list, setList] = React.useState(null);
   const search = (e) => {
     e.preventDefault();
@@ -31,11 +31,12 @@ function App() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button>Search</button>
+        {/* Es kann alles gesucht werden was einem beliebt */}
+        <button>Search news</button>
       </form>
       {!list ? null : list.length === 0 ? (
         <p>
-          <i>No results!</i>
+          <i>No results found!</i>
         </p>
       ) : (
         <ul>
